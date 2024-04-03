@@ -14,9 +14,10 @@ const validateAdminUser = async (username, password) => {
     if(username !== config.APP_USERNAME){
         throw new Error('User does not exist')
     }
-    const isPasswordCorrect = await comparePassword(password, config.APP_PASSWORD)
+    // const isPasswordCorrect = await comparePassword(password, config.APP_PASSWORD)
     console.log(config.APP_PASSWORD, password)
-    if(!isPasswordCorrect){
+    
+    if (password != config.APP_PASSWORD){
         throw new Error('Password is incorrect')
     }
     return true
