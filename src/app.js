@@ -28,7 +28,7 @@ const app = new Koa();
 
 // App Settings
 app.proxy = true;
-app.keys = [];
+app.keys = [config.APP_SESSION_SECRET];
 
 // Middlewares
 app.use(session(app));
